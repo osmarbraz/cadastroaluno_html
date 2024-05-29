@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <title>Cadastro de Aluno</title>
+</head>
+
+<body>
+    <script language="JavaScript">
+        // Função para exibir os dados do formulário
+        function Enviar(form) {
+            saida = " <h1>Exibindo os Dados do Aluno:</h1>";
+            saida = saida + "<br>AlunoId: " + form.alunoId.value;
+            saida = saida + "<br>Nome: " + form.nome.value;
+			saida = saida + "<br>Curso: " + form.curso.value;
+            saida = saida + "<br>CPF: " + form.CPF.value;
+            document.write(saida);
+        }
+
+        // Função para verificar se um campo está vazio
+        function eVazio(_str) {
+            if (_str == null || _str == "")
+                return true;
+            return false;
+        }
+
+        // Função para validar os dados do formulário
+        function validar(form) {
+            if (eVazio(form.alunoId.value)) {
+                alert('AlunoId deve ter um valor');
+                return false;
+            }
+            if (eVazio(form.nome.value)) {
+                alert('Nome deve ter um valor');
+                return false;
+            }
+            //Se os campos foram preenchidos corretamente, chama a função Enviar
+            Enviar(form);
+            return true;
+        } 
+    </script>
+    <h1>Dados de Aluno</h1>
+    <form name="FrmCadastroAluno" method="post" action="">
+        AlunoId: <input type=text name="alunoId" size=10 maxlength=10>
+        <p>
+            Nome: <input type=text name="nome" size=50 maxlength=40>
+		<p>
+            Curso: <input type=text name="curso" size=40 maxlength=30>			
+        <p>
+            CPF: <input type=text name="CPF" size=20 maxlength=15>
+        <p>
+            <input type="reset" value="Limpar">
+            <input type="button" name="Cadastrar" value="Cadastrar" onClick="return validar(this.form); ">
+        <p>
+    </form>
+</body>
+
+</html>
