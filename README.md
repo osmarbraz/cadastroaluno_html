@@ -1,9 +1,10 @@
 # Programa cadastro de aluno em html, javascript e css.
 
-## 
+## Descrição
+
 O projeto foi desenvolvido no VSCode deve ser chamado "cadastroaluno_html".
 
-## Descrição
+## Contextualização
 
 Uma universidade necessita disponibilizar na web um formulário para cadastrar seus alunos.
 
